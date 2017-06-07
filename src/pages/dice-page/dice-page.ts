@@ -1,25 +1,41 @@
-import { Component } from '@angular/core';
-import { NavParams } from "ionic-angular";
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { NavParams, Content } from "ionic-angular";
 import { Avatar } from "../../model/avatar";
 
-/**
- * Generated class for the DicePageComponent component.
- *
- * See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
- * for more info on Angular Components.
- */
 @Component({
   selector: 'dice-page',
   templateUrl: 'dice-page.html'
 })
-export class DicePageComponent {
+export class DicePageComponent implements OnInit {
+
+  @ViewChild('canvas') canvasRef: ElementRef;
+  @ViewChild(Content) content: Content;
 
   avatar: Avatar;
   result: number;
+  avatarImg: HTMLImageElement;
+  canvasCxt: CanvasRenderingContext2D;
 
   constructor(navParams: NavParams) {
     this.avatar = navParams.get('Avatar');
     this.roll();
+  }
+
+  ngOnInit() {
+    console.log(this.content);
+    //this.canvasRef.nativeElement.width = this.content.contentWidth;
+    this.canvasCxt = this.canvasRef.nativeElement.getContext('2d');
+    this.avatarImg = new Image();
+    this.avatarImg.src = this.avatar.imgPath;
+
+    var cxt = this.canvasCxt;
+    //var cnvs = this.canvasRef;
+    // var cntnt = this.content;
+    var img = this.avatarImg;
+
+    this.avatarImg.onload = function() {
+      cxt.drawImage(img, 1, 1);
+      };
   }
 
   roll(){
