@@ -9,12 +9,14 @@ import { Avatar } from '../model/avatar';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DicePageComponent } from '../pages/dice-page/dice-page';
+import { DiceRollerPageComponent } from '../pages/dice-roller-page/dice-roller-page';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    DicePageComponent
+    DicePageComponent,
+    DiceRollerPageComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { DicePageComponent } from '../pages/dice-page/dice-page';
   entryComponents: [
     MyApp,
     HomePage,
-    DicePageComponent
+    DicePageComponent,
+    DiceRollerPageComponent
   ],
   providers: [
     StatusBar,

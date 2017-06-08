@@ -10,7 +10,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <p center>{{result}}</p>
-      <canvas #canvas></canvas>
+<p center>{{result}}</p>
+<ion-content padding>    
+    <ion-img #avatarImage src="{{avatar.imgPath}}" alt="avatar.name" (click)="this.roll()"></ion-img>
 </ion-content>

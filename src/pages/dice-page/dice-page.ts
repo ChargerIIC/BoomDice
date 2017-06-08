@@ -27,14 +27,20 @@ export class DicePageComponent implements OnInit {
     this.canvasCxt = this.canvasRef.nativeElement.getContext('2d');
     this.avatarImg = new Image();
     this.avatarImg.src = this.avatar.imgPath;
+    //this.avatarImg.width = this.canvasRef.nativeElement.width /10;
+    //this.avatarImg.height = this.canvasRef.nativeElement.height /10;
 
     var cxt = this.canvasCxt;
-    //var cnvs = this.canvasRef;
-    // var cntnt = this.content;
+    var cnvs = this.canvasRef;
+    var cntnt = this.content;
     var img = this.avatarImg;
 
     this.avatarImg.onload = function() {
-      cxt.drawImage(img, 1, 1);
+      console.log('x ' + (cnvs.nativeElement.width-10));
+      console.log('y ' + (cnvs.nativeElement.height-10));
+      var imgW = img.width/10;
+      var imgH = img.height/10;
+      cxt.drawImage(img, cnvs.nativeElement.width/2-imgW-10, cnvs.nativeElement.height-imgH-10, imgW,imgH);
       };
   }
 

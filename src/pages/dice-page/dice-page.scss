@@ -1,8 +1,12 @@
 dice-page {
 
 canvas{
-    width: 75vh;
-    height: 75vh;
+    width: 100%;
+    height: 80%;
+    margin: 10px auto;
+    border: solid 4px #999; 
+    background-color: White; 
+    display:block;
 }
 
 }

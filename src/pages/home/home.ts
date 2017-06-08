@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { DicePageComponent } from "../dice-page/dice-page";
 import { Avatar } from "../../model/avatar";
+import { DiceRollerPageComponent } from "../dice-roller-page/dice-roller-page";
 
 @Component({
   selector: 'page-home',
@@ -21,6 +22,7 @@ export class HomePage
 
   selectAvatar(avatar){
     console.log(avatar.name + ' selected.');
-    this.modalCtrl.create(DicePageComponent, {Avatar: avatar}).present();
+    //this.modalCtrl.create(DicePageComponent, {Avatar: avatar}).present();
+    this.navCtrl.push(DiceRollerPageComponent, {Avatar: avatar});
   }
 }
