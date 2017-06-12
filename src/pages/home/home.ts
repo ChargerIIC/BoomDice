@@ -16,7 +16,7 @@ export class HomePage
   constructor(public navCtrl: NavController, private modalCtrl: ModalController) {
     var avatar = new Avatar();
     avatar.name = 'BoomCat';
-    avatar.imgPath = '../../assets/img/avatar/cat/Walk (1).png';
+    avatar.imgPath = 'assets/img/avatar/cat/Walk (1).png';
     this.avatars.push(avatar);
   }
 
