@@ -4,7 +4,7 @@ import { Avatar } from "../../model/avatar";
 
 @Component({
   selector: 'dice-roller-page',
-  templateUrl: 'dice-roller-page.html'
+  templateUrl: 'dice-roller-page.html',
 })
 export class DiceRollerPageComponent implements OnInit {
 
