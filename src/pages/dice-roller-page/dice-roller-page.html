@@ -11,7 +11,6 @@
 </ion-header>
 
 <ion-content padding-top> 
-  <p center>{{result}}</p>   
-  <img bottom-center id="backImage" src="../assets/img/background/48748-blue-flame.png" (click)="this.roll()" width=100%>
-  <img bottom-center #avatarImage src="{{avatar.imgPath}}" alt="avatar.name" (click)="this.roll()" width="30%">
+  <p class="diceResult" ion-text center color="light">{{result}}</p>   
+  <img id="avatarImage" src="{{avatar.imgPath}}" alt="avatar.name" (click)="this.roll()">
 </ion-content>
