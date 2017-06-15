@@ -14,6 +14,7 @@ export class DiceRollerPageComponent implements OnInit {
   avatar: Avatar;
   result: number;
   avatarImg: HTMLImageElement;
+  bgImagePath: string;
 
   constructor(navParams: NavParams) {
     this.avatar = navParams.get('Avatar');
@@ -26,6 +27,20 @@ export class DiceRollerPageComponent implements OnInit {
   roll(){
     var res = Math.floor(Math.random() * 20) + 1;
     console.log(res);
+
+    if(res <=5){
+      this.bgImagePath = 'redflame_animated.gif';
+    } else if(res <= 10){
+      this.bgImagePath = 'Blue_flame_animated_Low.gif';
+    }else if(res <= 15){
+      this.bgImagePath = 'Blue_Fire_Burn_Animated.gif';
+    }else if(res <=19){
+      this.bgImagePath = 'Blue_Fire_Burn_Animated.gif';
+    }
+    else{
+      this.bgImagePath = 'Blue_Fire_Burn_Animated.gif';
+    }
+
     this.result =  res;
   }
 
