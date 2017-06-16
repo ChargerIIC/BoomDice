@@ -12,7 +12,7 @@ export class DicePageComponent implements OnInit {
   @ViewChild(Content) content: Content;
 
   avatar: Avatar;
-  result: number;
+  result: string;
   avatarImg: HTMLImageElement;
   canvasCxt: CanvasRenderingContext2D;
 
@@ -41,9 +41,56 @@ export class DicePageComponent implements OnInit {
 
   roll(){
     var res = Math.floor(Math.random() * 20) + 1;
-    console.log(res);
-
-    this.result =  res;
+    this.result = this.convertResultToDice(res);
+    console.log(res + ' ' + this.result);
   }
 
+  convertResultToDice(res: number) : string
+  {     
+      switch(res){
+        case 1:
+          return 'A';
+        case 2:
+          return 'B';
+        case 3:
+          return 'C';
+        case 4:
+          return 'D';
+        case 5:
+          return 'E';
+        case 6:
+          return 'F';
+        case 7:
+          return 'G';
+        case 8:
+          return 'H';
+        case 9:
+          return 'I';
+        case 10:
+          return 'J';
+        case 11:
+          return 'K';
+        case 12:
+          return 'L';
+        case 13:
+          return 'M';
+        case 14:
+          return 'N';
+        case 15:
+          return 'O';
+        case 16:
+          return 'P';
+        case 17:
+          return 'Q';
+        case 18:
+          return 'R';
+        case 19:
+          return 'S';
+        case 20:
+          return 'T';          
+      }
+
+      var result = res.toString();
+      return result;
+  }
 }
