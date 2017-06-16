@@ -10,7 +10,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding-top [style.backgroundImage]="'url(../assets/img/background/' + bgImagePath + ')'"> 
+<ion-content padding-top [style.backgroundImage]="'url(../assets/img/background/' + this.bgImagePath + ')'"> 
   <p class="diceResult" ion-text center color="light">{{result}}</p>   
   <img id="avatarImage" src="{{avatar.imgPath}}" alt="avatar.name" (click)="this.roll()">
 </ion-content>

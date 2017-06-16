@@ -29,11 +29,11 @@ export class DiceRollerPageComponent implements OnInit {
     console.log(res);
 
     if(res <=5){
-      this.bgImagePath = 'redflame_animated.gif';
-    } else if(res <= 10){
       this.bgImagePath = 'Blue_flame_animated_Low.gif';
+    } else if(res <= 10){
+      this.bgImagePath = 'blue-fire-flames_animated_med.gif';
     }else if(res <= 15){
-      this.bgImagePath = 'Blue_Fire_Burn_Animated.gif';
+      this.bgImagePath = 'blue-fire-flames_animated_med.gif';
     }else if(res <=19){
       this.bgImagePath = 'Blue_Fire_Burn_Animated.gif';
     }
