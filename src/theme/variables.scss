@@ -76,3 +76,10 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+@font-face {
+    font-family: 'DPoly Twenty-Sider';
+  font-style: normal;
+  font-weight: normal;
+  src: local("DPoly Twenty-Sider"), url('../assets/font/DPoly Twenty-Sider.otf') format("opentype");
+}
