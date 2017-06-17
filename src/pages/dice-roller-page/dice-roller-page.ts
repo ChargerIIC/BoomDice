@@ -32,14 +32,14 @@ export class DiceRollerPageComponent implements OnInit {
     if(this.numberResult <=5){
       this.bgImagePath = 'Blue_flame_animated_Low.gif';
     } else if(this.numberResult <= 10){
-      this.bgImagePath = 'blue-fire-flames_animated_med.gif';
-    }else if(this.numberResult <= 15){
-      this.bgImagePath = 'blue-fire-flames_animated_med.gif';
-    }else if(this.numberResult <=19){
       this.bgImagePath = 'Blue_Fire_Burn_Animated.gif';
+    }else if(this.numberResult <= 15){
+      this.bgImagePath = 'Blue_Fire_Burn_Animated.gif';
+    }else if(this.numberResult <=19){
+      this.bgImagePath = 'blue-fire-flames_animated_med.gif';
     }
     else{
-      this.bgImagePath = 'Blue_Fire_Burn_Animated.gif';
+      this.bgImagePath = 'blue-fire-flames_animated_med.gif';
     }
 
     console.log(this.numberResult + ' ' + this.result);
