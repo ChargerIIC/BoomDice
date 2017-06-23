@@ -18,8 +18,8 @@ export class DiceRollerPageComponent implements OnInit {
   bgImagePath: string;
 
   constructor(navParams: NavParams, private vibMotor: Vibration, private nativeAudio: NativeAudio) {
-    this.nativeAudio.preloadSimple('diceRoll', 'assets/audio/162456__kastenfrosch__dice.mp3');
     this.avatar = navParams.get('Avatar');
+    this.loadSounds();
     this.roll();
   }
 
@@ -40,6 +40,7 @@ export class DiceRollerPageComponent implements OnInit {
     if(this.numberResult ==1){
       //critical failue
       this.bgImagePath = 'Blue_flame_animated_Low.gif';
+      this.nativeAudio.play('failure', ()=> console.log('Played Failure.'));
     }
     if(this.numberResult <=5){
       this.bgImagePath = 'Blue_flame_animated_Low.gif';
@@ -52,6 +53,7 @@ export class DiceRollerPageComponent implements OnInit {
     }
     else{
       this.bgImagePath = 'blue-fire-flames_animated_med.gif';
+      this.nativeAudio.play('success', ()=> console.log('Played Success.'));
       this.vibMotor.vibrate(1000); //1 second
     }
 
@@ -107,4 +109,9 @@ export class DiceRollerPageComponent implements OnInit {
       return result;
   }
 
+  loadSounds(){
+        this.nativeAudio.preloadSimple('diceRoll', 'assets/audio/162456__kastenfrosch__dice.mp3');
+        this.nativeAudio.preloadSimple('success', 'assets/audio/113989__kastenfrosch__gewonnen.mp3');
+        this.nativeAudio.preloadSimple('failure', '162457__kastenfrosch__verloren.mp3');        
+  }
 }
