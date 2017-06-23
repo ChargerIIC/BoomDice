@@ -1,5 +1,5 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
-import { NavParams, Content } from "ionic-angular";
+import { Component, OnInit } from '@angular/core';
+import { NavParams } from "ionic-angular";
 import { Avatar } from "../../model/avatar";
 import { Vibration } from '@ionic-native/vibration';
 
@@ -9,13 +9,10 @@ import { Vibration } from '@ionic-native/vibration';
 })
 export class DiceRollerPageComponent implements OnInit {
 
-  @ViewChild(Content) content: Content;
-  @ViewChild('avatarImage') avatarRef: ElementRef;
 
   avatar: Avatar;
   result: string;
   numberResult: number
-  avatarImg: HTMLImageElement;
   bgImagePath: string;
 
   constructor(navParams: NavParams, private vibMotor: Vibration) {
@@ -100,4 +97,5 @@ export class DiceRollerPageComponent implements OnInit {
       var result = res.toString();
       return result;
   }
+
 }
