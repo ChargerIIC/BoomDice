@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { NavParams, Content } from "ionic-angular";
 import { Avatar } from "../../model/avatar";
+import { Vibration } from '@ionic-native/vibration';
 
 @Component({
   selector: 'dice-roller-page',
@@ -17,7 +18,7 @@ export class DiceRollerPageComponent implements OnInit {
   avatarImg: HTMLImageElement;
   bgImagePath: string;
 
-  constructor(navParams: NavParams) {
+  constructor(navParams: NavParams, private vibMotor: Vibration) {
     this.avatar = navParams.get('Avatar');
     this.roll();
   }
@@ -26,6 +27,7 @@ export class DiceRollerPageComponent implements OnInit {
   }
 
   roll(){
+    this.vibMotor.vibrate(0); //stop any current motor work
     this.numberResult = Math.floor(Math.random() * 20) + 1;
     this.result = this.convertResultToDice(this.numberResult);
 
@@ -40,6 +42,7 @@ export class DiceRollerPageComponent implements OnInit {
     }
     else{
       this.bgImagePath = 'blue-fire-flames_animated_med.gif';
+      this.vibMotor.vibrate(1000); //1 second
     }
 
     console.log(this.numberResult + ' ' + this.result);
