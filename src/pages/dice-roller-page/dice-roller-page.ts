@@ -16,9 +16,11 @@ export class DiceRollerPageComponent implements OnInit {
   result: string;
   numberResult: number
   bgImagePath: string;
+  avatarImagePath: string;
 
   constructor(navParams: NavParams, private vibMotor: Vibration, private nativeAudio: NativeAudio) {
     this.avatar = navParams.get('Avatar');
+    this.avatarImagePath = this.avatar.medImgPath;
     this.loadSounds();
     this.roll();
   }
@@ -40,24 +42,24 @@ export class DiceRollerPageComponent implements OnInit {
     if(this.numberResult ==1){
       //critical failue
       this.bgImagePath = 'Blue_flame_animated_Low.gif';
+      this.avatarImagePath = this.avatar.cFailureImgPath;
       this.nativeAudio.play('failure', ()=> console.log('Played Failure.'));
-    }
-    if(this.numberResult <=5){
+    } else if(this.numberResult <=5){
       this.bgImagePath = 'Blue_flame_animated_Low.gif';
-    } else if(this.numberResult <= 10){
+      this.avatarImagePath = this.avatar.lowImgPath;
+    } else if(this.numberResult <= 15){
       this.bgImagePath = 'Blue_Fire_Burn_Animated.gif';
-    }else if(this.numberResult <= 15){
-      this.bgImagePath = 'Blue_Fire_Burn_Animated.gif';
-    }else if(this.numberResult <=19){
+      this.avatarImagePath = this.avatar.medImgPath;
+    }else if(this.numberResult <=16){
       this.bgImagePath = 'blue-fire-flames_animated_med.gif';
+      this.avatarImagePath = this.avatar.highImgPath;
     }
     else{
       this.bgImagePath = 'blue-fire-flames_animated_med.gif';
+      this.avatarImagePath = this.avatar.cSuccessImgPath;
       this.nativeAudio.play('success', ()=> console.log('Played Success.'));
       this.vibMotor.vibrate(1000); //1 second
     }
-
-    console.log(this.numberResult + ' ' + this.result);
   }
 
   convertResultToDice(res: number) : string

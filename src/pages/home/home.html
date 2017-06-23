@@ -12,7 +12,7 @@
 
   <ion-list>
     <ion-item *ngFor="let avatar of this.avatars">
-      <img width="30%" src="{{avatar.imgPath}}" alt="avatar.name" (click)="selectAvatar(avatar)">
+      <img width="30%" src="{{avatar.medImgPath}}" alt="avatar.name" (click)="selectAvatar(avatar)">
       <button ion-item (click)="selectAvatar(avatar)" >{{avatar.name}} </button>
     </ion-item>
   </ion-list>
