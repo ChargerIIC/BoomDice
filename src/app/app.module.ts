@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { Vibration } from '@ionic-native/vibration';
+import { NativeAudio } from '@ionic-native/native-audio';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -30,6 +31,7 @@ import { DiceRollerPageComponent } from '../pages/dice-roller-page/dice-roller-p
     StatusBar,
     SplashScreen,
     Vibration,
+    NativeAudio,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

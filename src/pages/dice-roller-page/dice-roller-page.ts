@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavParams } from "ionic-angular";
 import { Avatar } from "../../model/avatar";
 import { Vibration } from '@ionic-native/vibration';
+import { NativeAudio } from '@ionic-native/native-audio';
 
 @Component({
   selector: 'dice-roller-page',
@@ -15,7 +16,8 @@ export class DiceRollerPageComponent implements OnInit {
   numberResult: number
   bgImagePath: string;
 
-  constructor(navParams: NavParams, private vibMotor: Vibration) {
+  constructor(navParams: NavParams, private vibMotor: Vibration, private nativeAudio: NativeAudio) {
+    this.nativeAudio.preloadSimple('diceRoll', 'assets/audio/162456__kastenfrosch__dice.mp3');
     this.avatar = navParams.get('Avatar');
     this.roll();
   }
@@ -25,6 +27,7 @@ export class DiceRollerPageComponent implements OnInit {
 
   roll(){
     this.vibMotor.vibrate(0); //stop any current motor work
+    this.nativeAudio.play('diceRoll', ()=> console.log('Played DiceRoll.'));
     this.numberResult = Math.floor(Math.random() * 20) + 1; //fetch dice result
     this.result = this.convertResultToDice(this.numberResult); //create result for dice font
 
