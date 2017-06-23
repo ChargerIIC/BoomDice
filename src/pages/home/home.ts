@@ -22,7 +22,6 @@ export class HomePage
 
   selectAvatar(avatar){
     console.log(avatar.name + ' selected.');
-    //this.modalCtrl.create(DicePageComponent, {Avatar: avatar}).present();
     this.navCtrl.push(DiceRollerPageComponent, {Avatar: avatar});
   }
 }
