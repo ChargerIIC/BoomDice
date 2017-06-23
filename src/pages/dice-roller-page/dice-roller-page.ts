@@ -28,9 +28,13 @@ export class DiceRollerPageComponent implements OnInit {
 
   roll(){
     this.vibMotor.vibrate(0); //stop any current motor work
-    this.numberResult = Math.floor(Math.random() * 20) + 1;
-    this.result = this.convertResultToDice(this.numberResult);
+    this.numberResult = Math.floor(Math.random() * 20) + 1; //fetch dice result
+    this.result = this.convertResultToDice(this.numberResult); //create result for dice font
 
+    if(this.numberResult ==1){
+      //critical failue
+      this.bgImagePath = 'Blue_flame_animated_Low.gif';
+    }
     if(this.numberResult <=5){
       this.bgImagePath = 'Blue_flame_animated_Low.gif';
     } else if(this.numberResult <= 10){
@@ -96,5 +100,4 @@ export class DiceRollerPageComponent implements OnInit {
       var result = res.toString();
       return result;
   }
-
 }
