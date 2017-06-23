@@ -3,6 +3,7 @@ import { NavParams } from "ionic-angular";
 import { Avatar } from "../../model/avatar";
 import { Vibration } from '@ionic-native/vibration';
 import { NativeAudio } from '@ionic-native/native-audio';
+import { Observable } from "rxjs/Rx";
 
 @Component({
   selector: 'dice-roller-page',
@@ -10,7 +11,7 @@ import { NativeAudio } from '@ionic-native/native-audio';
 })
 export class DiceRollerPageComponent implements OnInit {
 
-
+  isRolling: boolean = false;
   avatar: Avatar;
   result: string;
   numberResult: number
@@ -26,7 +27,12 @@ export class DiceRollerPageComponent implements OnInit {
   }
 
   roll(){
+    this.isRolling = true;
     this.vibMotor.vibrate(0); //stop any current motor work
+    Observable.interval(1000).take(1).subscribe(()=> {
+      this.isRolling = false;
+    });
+
     this.nativeAudio.play('diceRoll', ()=> console.log('Played DiceRoll.'));
     this.numberResult = Math.floor(Math.random() * 20) + 1; //fetch dice result
     this.result = this.convertResultToDice(this.numberResult); //create result for dice font

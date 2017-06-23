@@ -11,6 +11,6 @@
 </ion-header>
 
 <ion-content padding-top (click)="this.roll()" [style.backgroundImage]="'url(assets/img/background/' + this.bgImagePath + ')'"> 
-  <p class="diceResult" ion-text center color="light">{{result}}</p>   
+  <p [ngClass]="{'roll' : isRolling}" class="diceResult" ion-text center color="light">{{result}}</p>   
   <img id="avatarImage" src="{{avatar.imgPath}}" alt="avatar.name" >
 </ion-content>
