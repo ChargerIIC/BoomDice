@@ -111,7 +111,7 @@ export class DiceRollerPageComponent implements OnInit {
 
   loadSounds(){
         this.nativeAudio.preloadSimple('diceRoll', 'assets/audio/162456__kastenfrosch__dice.mp3');
-        this.nativeAudio.preloadSimple('success', 'assets/audio/113989__kastenfrosch__gewonnen.mp3');
-        this.nativeAudio.preloadSimple('failure', '162457__kastenfrosch__verloren.mp3');        
+        this.nativeAudio.preloadSimple('success', `assets/audio/${this.avatar.cSuccessSound}`);
+        this.nativeAudio.preloadSimple('failure', `assets/audio/${this.avatar.cFailureSound}`);        
   }
 }
