@@ -50,7 +50,7 @@ export class DiceRollerPageComponent implements OnInit {
     } else if(this.numberResult <= 15){
       this.bgImagePath = 'Blue_Fire_Burn_Animated.gif';
       this.avatarImagePath = this.avatar.medImgPath;
-    }else if(this.numberResult <=16){
+    }else if(this.numberResult <=19){
       this.bgImagePath = 'blue-fire-flames_animated_med.gif';
       this.avatarImagePath = this.avatar.highImgPath;
     }
