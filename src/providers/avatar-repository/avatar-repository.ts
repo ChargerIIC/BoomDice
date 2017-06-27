@@ -1,18 +1,45 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+
+import { Avatar } from "../../model/avatar";
 
 /*
-  Generated class for the AvatarRepositoryProvider provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
+ This provider represents our model, storing information about each of the available avatars.
 */
 @Injectable()
 export class AvatarRepositoryProvider {
 
-  constructor(public http: Http) {
-    console.log('Hello AvatarRepositoryProvider Provider');
+  avatars : Array<Avatar> = []
+
+  constructor() {
+
+    var avatar : Avatar = {
+      name: 'BoomCat',
+      lowImgPath: 'assets/img/avatar/cat/Cat_Hurt_Loop.gif',
+      medImgPath: 'assets/img/avatar/cat/Cat_Idle_Loop.gif',
+      highImgPath: 'assets/img/avatar/cat/Cat_Run_Loop.gif',
+      cFailureImgPath: 'assets/img/avatar/cat/Cat_Dead_NoLoop.gif',
+      cSuccessImgPath: 'assets/img/avatar/cat/Cat_Slide_Loop.gif',
+      cFailureSound: '162457__kastenfrosch__verloren.mp3',
+      cSuccessSound: '113989__kastenfrosch__gewonnen.mp3',
+    };
+    this.avatars.push(avatar);
+
+    avatar = {
+      name: 'White Knight',
+      lowImgPath: 'assets/img/avatar/knight/Knight_Death_NoLoop.gif', //need to create a good failure animation
+      medImgPath: 'assets/img/avatar/knight/Knight_Idle_Loop.gif',
+      highImgPath: 'assets/img/avatar/knight/Knight_Attack_Loop.gif',
+      cFailureImgPath: 'assets/img/avatar/knight/Knight_Death_NoLoop.gif',
+      cSuccessImgPath: 'assets/img/avatar/knight/Knight_JumpAttack_Loop.gif',
+      cFailureSound: '162457__kastenfrosch__verloren.mp3',
+      cSuccessSound: '113989__kastenfrosch__gewonnen.mp3',
+    };
+    this.avatars.push(avatar);
+
+  }
+
+  public GetAvailableAvatars() : Array<Avatar>{
+    return this.avatars;
   }
 
 }
