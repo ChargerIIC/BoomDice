@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 import { Credit } from "../../model/credit";
 
 /**
@@ -8,7 +10,6 @@ import { Credit } from "../../model/credit";
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
 @Component({
   selector: 'page-credits',
   templateUrl: 'credits.html',
@@ -17,7 +18,7 @@ export class CreditsPage {
 
   credits : Array<Credit> = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams)
+  constructor(public navCtrl: NavController, public navParams: NavParams, private appBrowser: InAppBrowser)
   {  
   }
 
@@ -40,7 +41,7 @@ export class CreditsPage {
   }
 
   launchBrowser(creditUri: string){
-    //this.appBrowser.create(creditUri);
+    this.appBrowser.create(creditUri);
   }
 
 }
