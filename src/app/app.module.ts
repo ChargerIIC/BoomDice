@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DiceRollerPageComponent } from '../pages/dice-roller-page/dice-roller-page';
+import { AvatarRepositoryProvider } from '../providers/avatar-repository/avatar-repository';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { DiceRollerPageComponent } from '../pages/dice-roller-page/dice-roller-p
     SplashScreen,
     Vibration,
     NativeAudio,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AvatarRepositoryProvider
   ]
 })
 export class AppModule {}
