@@ -19,7 +19,6 @@ export class HomePage
   }
 
   selectAvatar(avatar){
-    console.log(avatar.name + ' selected.');
     this.navCtrl.push(DiceRollerPageComponent, {Avatar: avatar});
   }
 }

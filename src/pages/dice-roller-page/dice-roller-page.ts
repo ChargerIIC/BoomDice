@@ -35,7 +35,7 @@ export class DiceRollerPageComponent implements OnInit {
       this.isRolling = false;
     });
 
-    this.nativeAudio.play('diceRoll', ()=> console.log('Played DiceRoll.'));
+    this.nativeAudio.play('diceRoll');
     this.numberResult = Math.floor(Math.random() * 20) + 1; //fetch dice result
     this.result = this.convertResultToDice(this.numberResult); //create result for dice font
 
@@ -43,7 +43,7 @@ export class DiceRollerPageComponent implements OnInit {
       //critical failue
       this.bgImagePath = 'Blue_flame_animated_Low.gif';
       this.avatarImagePath = this.avatar.cFailureImgPath;
-      this.nativeAudio.play('failure', ()=> console.log('Played Failure.'));
+      this.nativeAudio.play('failure');
     } else if(this.numberResult <=5){
       this.bgImagePath = 'Blue_flame_animated_Low.gif';
       this.avatarImagePath = this.avatar.lowImgPath;
@@ -57,7 +57,7 @@ export class DiceRollerPageComponent implements OnInit {
     else{
       this.bgImagePath = 'blue-fire-flames_animated_med.gif';
       this.avatarImagePath = this.avatar.cSuccessImgPath;
-      this.nativeAudio.play('success', ()=> console.log('Played Success.'));
+      this.nativeAudio.play('success');
       this.vibMotor.vibrate(1000); //1 second
     }
   }
