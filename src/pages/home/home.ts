@@ -12,7 +12,7 @@ import { AvatarRepositoryProvider } from "../../providers/avatar-repository/avat
 export class HomePage 
 {
 
-  public avatars = []
+  public avatars : Array<Avatar> = []
 
   constructor(public navCtrl: NavController, private modalCtrl: ModalController, private avatarRepository : AvatarRepositoryProvider) {
     this.avatars = this.avatarRepository.GetAvailableAvatars();
