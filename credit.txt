@@ -4,7 +4,13 @@ Boomcat Critical Success and Failure sounds by Kastenfrosch
 Dice rolling sound by Kastenfrosch
 https://freesound.org/people/Kastenfrosch/
 
+Graphics
 
 Cat/Dog Sprite
 Knight Sprite
 Zuhria Alfitra - http://www.gameart2d.com/
+
+Font
+Poly Dice Font (purchased 6-27-2017)
+Neale Davidson (in memory of)
+http://www.pixelsagas.com
