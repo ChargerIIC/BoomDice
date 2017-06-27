@@ -11,11 +11,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DiceRollerPageComponent } from '../pages/dice-roller-page/dice-roller-page';
 import { AvatarRepositoryProvider } from '../providers/avatar-repository/avatar-repository';
+import { CreditsPage } from "../pages/credits/credits";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    CreditsPage,
     DiceRollerPageComponent
   ],
   imports: [
@@ -26,6 +28,7 @@ import { AvatarRepositoryProvider } from '../providers/avatar-repository/avatar-
   entryComponents: [
     MyApp,
     HomePage,
+    CreditsPage,
     DiceRollerPageComponent
   ],
   providers: [

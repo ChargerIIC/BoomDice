@@ -14,5 +14,11 @@
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item *ngFor="let credit of credits" (click)="launchBrowser(credit.uri)">
+      <h2>{{credit.name}}</h2>
+      <h3>{{credit.type}}</h3>
+      <strong>{{credit.uri}}</strong>
+    </ion-item>
+  </ion-list>
 </ion-content>
