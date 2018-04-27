@@ -14,7 +14,7 @@ export class HomePage
 
   public avatars : Array<Avatar> = []
 
-  constructor(public navCtrl: NavController, private modalCtrl: ModalController, private avatarRepository : AvatarRepositoryProvider) {
+  constructor(public navCtrl: NavController, private avatarRepository : AvatarRepositoryProvider) {
     this.avatars = this.avatarRepository.GetAvailableAvatars();
   }
 
