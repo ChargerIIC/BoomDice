@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController } from 'ionic-angular';
+import { NavController} from 'ionic-angular';
 
 import { Avatar } from "../../model/avatar";
 import { DiceRollerPageComponent } from "../dice-roller-page/dice-roller-page";
