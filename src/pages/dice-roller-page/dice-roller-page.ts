@@ -3,6 +3,7 @@ import { NavParams } from "ionic-angular";
 import { Avatar } from "../../model/avatar";
 import { Vibration } from '@ionic-native/vibration';
 import { NativeAudio } from '@ionic-native/native-audio';
+import { Shake } from '@ionic-native/shake';
 import { Observable } from "rxjs/Rx";
 
 @Component({
@@ -18,10 +19,13 @@ export class DiceRollerPageComponent implements OnInit {
   bgImagePath: string;
   avatarImagePath: string;
 
-  constructor(navParams: NavParams, private vibMotor: Vibration, private nativeAudio: NativeAudio) {
+  constructor(navParams: NavParams, private vibMotor: Vibration, private nativeAudio: NativeAudio, private shake: Shake) {
     this.avatar = navParams.get('Avatar');
     this.avatarImagePath = this.avatar.medImgPath;
     this.loadSounds();
+    const watch = this.shake.startWatch(60).subscribe(() => {
+      this.roll();
+      });
     this.roll();
   }
 
