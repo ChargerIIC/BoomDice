@@ -7,6 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Vibration } from '@ionic-native/vibration';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { Shake } from '@ionic-native/shake';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -62,6 +63,7 @@ export class MyErrorHandler implements ErrorHandler {
     DiceRollerPageComponent
   ],
   providers: [
+    Shake,
     StatusBar,
     SplashScreen,
     Vibration,

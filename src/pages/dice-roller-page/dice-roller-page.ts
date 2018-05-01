@@ -23,9 +23,12 @@ export class DiceRollerPageComponent implements OnInit {
     this.avatar = navParams.get('Avatar');
     this.avatarImagePath = this.avatar.medImgPath;
     this.loadSounds();
+    if(this.shake != null)
+    {
     const watch = this.shake.startWatch(60).subscribe(() => {
       this.roll();
       });
+    }
     this.roll();
   }
 
