@@ -38,6 +38,16 @@ export class CreditsPage {
     credit.name = '(In Memory of) Neale Davidson';
     credit.uri = 'http://www.pixelsagas.com'
     this.credits.push(credit);
+    credit = new Credit();
+    credit.type = 'Framework';
+    credit.name = 'Ionic Framework';
+    credit.uri = 'https://ionicframework.com/'
+    this.credits.push(credit);
+    credit = new Credit();
+    credit.type = 'Code';
+    credit.name = 'Vernon Burt';
+    credit.uri = 'https://github.com/ChargerIIC'
+    this.credits.push(credit);
   }
 
   launchBrowser(creditUri: string){
