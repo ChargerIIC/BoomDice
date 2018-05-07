@@ -26,27 +26,32 @@ export class CreditsPage {
     var credit = new Credit();
     credit.type = 'Audio';
     credit.name = 'Kastenfrosch';
-    credit.uri = 'https://freesound.org/people/Kastenfrosch/'
+    credit.uri = 'https://freesound.org/people/Kastenfrosch/';
     this.credits.push(credit);
     credit = new Credit();
     credit.type = 'Graphics';
     credit.name = 'Zuhria Alfitra';
-    credit.uri = 'http://www.gameart2d.com/'
+    credit.uri = 'http://www.gameart2d.com/';
+    this.credits.push(credit);
+    credit = new Credit();
+    credit.type = 'Graphics(MagiCat)';
+    credit.name = 'Rathnavel';
+    credit.uri = 'https://www.fiverr.com/rathnadhilip';
     this.credits.push(credit);
     credit = new Credit();
     credit.type = 'Font';
     credit.name = '(In Memory of) Neale Davidson';
-    credit.uri = 'http://www.pixelsagas.com'
+    credit.uri = 'http://www.pixelsagas.com';
     this.credits.push(credit);
     credit = new Credit();
     credit.type = 'Framework';
     credit.name = 'Ionic Framework';
-    credit.uri = 'https://ionicframework.com/'
+    credit.uri = 'https://ionicframework.com/';
     this.credits.push(credit);
     credit = new Credit();
     credit.type = 'Code';
     credit.name = 'Vernon Burt';
-    credit.uri = 'https://github.com/ChargerIIC'
+    credit.uri = 'https://github.com/ChargerIIC';
     this.credits.push(credit);
   }
 

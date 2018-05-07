@@ -36,6 +36,18 @@ export class AvatarRepositoryProvider {
     };
     this.avatars.push(avatar);
 
+    avatar = {
+      name: 'Magi Cat',
+      lowImgPath: 'assets/img/avatar/magicat/magicatfail.gif', 
+      medImgPath: 'assets/img/avatar/magicat/magicatlow.gif',
+      highImgPath: 'assets/img/avatar/magicat/magicathigh.gif',
+      cFailureImgPath: 'assets/img/avatar/magicat/magicatfail.gif',
+      cSuccessImgPath: 'assets/img/avatar/magicat/magicatsuccess.gif',
+      cFailureSound: '162457__kastenfrosch__verloren.mp3',
+      cSuccessSound: '113989__kastenfrosch__gewonnen.mp3',
+    };
+    this.avatars.push(avatar);
+
   }
 
   public GetAvailableAvatars() : Array<Avatar>{
