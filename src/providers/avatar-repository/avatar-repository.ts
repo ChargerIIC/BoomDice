@@ -21,6 +21,7 @@ export class AvatarRepositoryProvider {
       cSuccessImgPath: 'assets/img/avatar/cat/Cat_Slide_Loop.gif',
       cFailureSound: '162457__kastenfrosch__verloren.mp3',
       cSuccessSound: '113989__kastenfrosch__gewonnen.mp3',
+      background: 'pixellibrary.jpg'
     };
     this.avatars.push(avatar);
 
@@ -33,6 +34,7 @@ export class AvatarRepositoryProvider {
       cSuccessImgPath: 'assets/img/avatar/knight/Knight_JumpAttack_Loop.gif',
       cFailureSound: '162457__kastenfrosch__verloren.mp3',
       cSuccessSound: '113989__kastenfrosch__gewonnen.mp3',
+      background: 'pixelcastle.jpg'
     };
     this.avatars.push(avatar);
 
@@ -45,6 +47,7 @@ export class AvatarRepositoryProvider {
       cSuccessImgPath: 'assets/img/avatar/magicat/magicatsuccess.gif',
       cFailureSound: '162457__kastenfrosch__verloren.mp3',
       cSuccessSound: '113989__kastenfrosch__gewonnen.mp3',
+      background: 'pixellibrary.jpg'
     };
     this.avatars.push(avatar);
 

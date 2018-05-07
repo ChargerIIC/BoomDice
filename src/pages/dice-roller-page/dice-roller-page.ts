@@ -52,13 +52,13 @@ export class DiceRollerPageComponent implements OnInit {
       this.avatarImagePath = this.avatar.cFailureImgPath;
       this.nativeAudio.play('failure');
     } else if(this.numberResult <=5){
-      this.bgImagePath = 'Blue_flame_animated_Low.gif';
+      this.bgImagePath = this.avatar.background;
       this.avatarImagePath = this.avatar.lowImgPath;
     } else if(this.numberResult <= 15){
-      this.bgImagePath = 'Blue_Fire_Burn_Animated.gif';
+      this.bgImagePath = this.avatar.background;
       this.avatarImagePath = this.avatar.medImgPath;
     }else if(this.numberResult <=19){
-      this.bgImagePath = 'blue-fire-flames_animated_med.gif';
+      this.bgImagePath = this.avatar.background;
       this.avatarImagePath = this.avatar.highImgPath;
     }
     else{

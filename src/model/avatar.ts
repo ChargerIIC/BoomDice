@@ -7,6 +7,8 @@ export class Avatar{
     medImgPath: string;
     highImgPath: string;
 
+    background: string;
+
     cSuccessSound: string;
     cFailureSound: string;
     
